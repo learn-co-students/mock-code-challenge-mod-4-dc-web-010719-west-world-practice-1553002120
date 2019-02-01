@@ -35,7 +35,7 @@ Endpoints:
 Deliverables
 ============
 
-The components and styling have already been given to you. It'll be your job to import the components in the right order to build the component tree correctly and add most of the logic. You should NOT have to create any additional components. It is *possible* to build our this app without using all the comonents provided, but it will probably make your life easier if you *do* use each component at least once. 
+The components and styling have already been given to you. It'll be your job to import the components in the right order to build the component tree correctly and add most of the logic. You should NOT have to create any additional components. It is *possible* to build out this app without using all the components provided, but it might make your life easier if you *do* use each component at least once.
 
 Checkpoint 1: Build the Component Tree
 --------------------------------------
@@ -61,14 +61,14 @@ A host will either has a status of `active: false` or `active: true`. If the hos
 
 BEFORE MOVING ON: Double check, are you making sure you are only rendering active hosts on the West world map? Remember, some hosts are not active and should instead be rendered in the Cold storage.
 
-Checkpoint 5: Details
+Checkpoint 5: Details and HostInfo
 ---------------------------
 IMPORTANT: Once you have successfully rendered the correct areas and the hosts in their correct place, you do not need to communicate with the server for the rest of the app. This last feature will only affect how the `App` is rendered on the front end WITHOUT persisting the changes to the back end.
 
 Follow these rules for activating and decommissioning hosts:
 
 1. On load of the page, your `Details` component should show an image that is the West World logo.
-2. Clicking on any `Host` component will have the `Details` component display more information about that `Host`. ***Is there a component that might be useful for displaying info about a host??? Perhaps you should have the Details component render this other component...***
+2. Clicking on any `Host` component will have the `Details` component display more information about that `Host` through the `HostInfo` component.
 3. If a host's active attribute is set to false then they are decommissioned and should appear in ColdStorage. The HostInfo radio button should reflect this as well, reading "Active" if `active: true` and "Decommissioned" if `active: false`.
 4. Clicking on the radio button toggles the active status of that host, and the `WestworldMap` and `ColdStorage` should re-render accordingly.
 
