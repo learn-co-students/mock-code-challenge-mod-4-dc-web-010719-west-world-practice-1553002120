@@ -35,14 +35,14 @@ Endpoints:
 Deliverables
 ============
 
-The components and styling have already been given to you. It'll be your job to import the components in the right order to build the component tree correctly and add most of the logic.
+The components and styling have already been given to you. It'll be your job to import the components in the right order to build the component tree correctly and add most of the logic. You should NOT have to create any additional components. It is *possible* to build our this app without using all the comonents provided, but it will probably make your life easier if you *do* use each component at least once. 
 
 Checkpoint 1: Build the Component Tree
 --------------------------------------
 Determine how the component tree should be built. Some of the component tree has already been built for you. Before you get started, it is highly suggested to draw your existing component tree on paper. Then using visual clues from the example gif and clues from the comments within the code, where should the other components go in your component tree? A couple things to note:
 
 1. The root component is `App`. Within App, there are two main sections to this application: The top half (`WestworldMap`) and the bottom half (`Headquarters`). How should each of those components import the components that live inside them?
-2. Aside from visual cues, what functional cues can you get from the application? For example, it seems that the  West World Map contains multiple areas. A single `Area` component seems to hold hosts in a type of list. So what component does an area need to render that list? Is there another component that also holds hosts in a list that's not an area component?
+2. Aside from visual cues, what functional cues can you get from the application? For example, it seems that the  West World Map contains multiple areas. A single `Area` component seems to hold hosts in a type of list. So what component does an area need to render that list? ***Is there another component that also holds hosts in a list that's not an area component?? Can you use it to help you???***
 3. Remember that two separate component branches can import the same component.
 
 Checkpoint 2: Determine Where State Lives
@@ -51,7 +51,7 @@ You're going to be fetching information from two endpoints `/areas` and `/hosts`
 
 Checkpoint 3: Render the Areas
 ------------------------------
-Area information comes in through the `/areas` endpoint. You'll have to use that information to render the right number of area components on the map. Styling is given for you but you'll have to pass the area name to the `id` attribute to make it appear in the right place on the map. For example `id=python_pass` or `id={areaObject.name}`.
+Area information comes in through the `/areas` endpoint. You'll have to use that information to render the right number of area components on the map. Styling is given for you but ***you'll have to pass the area name to the `id` attribute*** to make it appear in the right place on the map. For example `id=python_pass`, NOT `id=1`
 
 Checkpoint 4: Render the Hosts
 ------------------------------
@@ -68,7 +68,7 @@ IMPORTANT: Once you have successfully rendered the correct areas and the hosts i
 Follow these rules for activating and decommissioning hosts:
 
 1. On load of the page, your `Details` component should show an image that is the West World logo.
-2. Clicking on any `Host` component will have the `Details` component display more information about that `Host`. Is there a component that might be useful for displaying info about a host???
+2. Clicking on any `Host` component will have the `Details` component display more information about that `Host`. ***Is there a component that might be useful for displaying info about a host??? Perhaps you should have the Details component render this other component...***
 3. If a host's active attribute is set to false then they are decommissioned and should appear in ColdStorage. The HostInfo radio button should reflect this as well, reading "Active" if `active: true` and "Decommissioned" if `active: false`.
 4. Clicking on the radio button toggles the active status of that host, and the `WestworldMap` and `ColdStorage` should re-render accordingly.
 
