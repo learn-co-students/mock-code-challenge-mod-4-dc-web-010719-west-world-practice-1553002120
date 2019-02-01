@@ -5,7 +5,7 @@ import * as Images from '../services/Images'
 const Details = () => {
 
   // We'll render the logo if no host is selected.
-  //But if a host does get selected, what should you render????
+  //But if a host is not selected, is there a particular component you could render instead????? Hmmmm...
   const renderSomething = () => (
     <Image size='medium' src={Images.westworldLogo}/>
   )
