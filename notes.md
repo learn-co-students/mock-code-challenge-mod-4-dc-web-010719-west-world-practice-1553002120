@@ -1,0 +1,11 @@
+- WestWorldMap
+  - Area
+    - HostList
+      - Host
+
+- Headquarters
+  - ColdStorage
+    - HostList
+      - Host
+  - Details
+    - HostInfo
