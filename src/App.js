@@ -46,11 +46,21 @@ class App extends Component {
     this.setState({activeHost: host})
   }
 
+  onToggleHost = (host) => {
+    const hosts = this.state.hosts.map(h => {
+      return h.id === host.id ? 
+      {...h, active: !h.active} : h
+    })
+    this.setState({hosts})
+  }
+
   render(){
     return (
       <Segment id='app'>
-        <WestworldMap areas={this.state.areas} hosts={this.state.hosts} onSelectHost={this.onSelectHost} />
-        <Headquarters hosts={this.inactiveHosts()} activeHost={this.state.activeHost} onSelectHost={this.onSelectHost} />
+        <WestworldMap areas={this.state.areas} hosts={this.state.hosts} 
+          onSelectHost={this.onSelectHost} />
+        <Headquarters hosts={this.inactiveHosts()} activeHost={this.state.activeHost} 
+          onSelectHost={this.onSelectHost} onToggleHost={this.onToggleHost} />
       </Segment>
     )
   }

@@ -20,7 +20,7 @@ class Headquarters extends Component {
           <ColdStorage hosts={this.props.hosts} onSelectHost={this.props.onSelectHost} />
         </Grid.Column>
         <Grid.Column width={6}>
-          <Details host={this.props.activeHost} />
+          <Details host={this.props.activeHost} onToggleHost={this.props.onToggleHost} />
         </Grid.Column>
       </Grid>
     )
