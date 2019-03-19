@@ -10,8 +10,7 @@ class HostInfo extends Component {
   }
 
   render(){
-    const {firstName, lastName, active, imageUrl, gender} = this.props.host
-    // const fullName = `${firstName} ${lastName}`
+    const {firstName, active, imageUrl, gender} = this.props.host
     const genderIcon = gender === 'Female' ? <Icon name='woman' /> : <Icon name='man' />
 
     return (

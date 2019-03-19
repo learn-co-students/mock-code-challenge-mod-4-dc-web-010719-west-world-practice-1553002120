@@ -17,10 +17,12 @@ class Headquarters extends Component {
     return(
       <Grid celled='internally'>
         <Grid.Column width={10}>
-          <ColdStorage hosts={this.props.hosts} onSelectHost={this.props.onSelectHost} />
+          <ColdStorage hosts={this.props.hosts} 
+            onSelectHost={this.props.onSelectHost} />
         </Grid.Column>
         <Grid.Column width={6}>
-          <Details host={this.props.activeHost} onToggleHost={this.props.onToggleHost} />
+          <Details host={this.props.activeHost} 
+            onToggleHost={this.props.onToggleHost} />
         </Grid.Column>
       </Grid>
     )
