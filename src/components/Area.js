@@ -2,6 +2,8 @@ import React from 'react';
 import '../stylesheets/Area.css'
 import {startCase} from 'lodash'
 
+import HostList from './HostList'
+
 const Area = (props) => {
   const key = props.area.name
   const name = startCase(key)
@@ -9,7 +11,7 @@ const Area = (props) => {
   return (
     <div className='area' id={key}>
       <h3 className='labels'>{name}</h3>
-      {/* See Checkpoint 1 item 2 in the Readme for a clue as to what goes here */}
+      <HostList hosts={props.hosts} />
     </div>
   )
 }

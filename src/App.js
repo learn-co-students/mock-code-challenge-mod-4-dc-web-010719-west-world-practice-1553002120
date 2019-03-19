@@ -14,15 +14,16 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.loadHosts()
     this.loadAreas()
   }
 
-  loadHosts() {
+  loadHosts(areas) {
     fetch(`${App.api}/hosts`)
       .then(res => res.json())
       .then(hosts => {
-        this.setState({hosts})
+        this.setState({
+          areas, hosts
+        })
       })
   }
 
@@ -30,14 +31,14 @@ class App extends Component {
     fetch(`${App.api}/areas`)
       .then(res => res.json())
       .then(areas => {
-        this.setState({areas})
+        this.loadHosts(areas)
       })
   }
 
   render(){
     return (
       <Segment id='app'>
-        <WestworldMap areas={this.state.areas} />
+        <WestworldMap areas={this.state.areas} hosts={this.state.hosts} />
         <Headquarters />
       </Segment>
     )

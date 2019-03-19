@@ -2,16 +2,27 @@ import React from 'react';
 import { Segment } from 'semantic-ui-react';
 import Area from './Area'
 
-const WestworldMap = (props) => {
-  // Remember, there's many ways to do this. This doesn't have to be a function component. It can be a class. It's up to you.
+class WestworldMap extends React.Component {
+  constructor(props) {
+    super(props)
+  }
 
-  return (
-    <Segment id="map" >
-      {props.areas.map(area => {
-        return <Area area={area} />
-      })}
-    </Segment>
-  )
+  areaHosts(area) {
+    return this.props.hosts.filter(host => {
+      return host.area === area.name
+    })
+  }
+
+  render() {
+    return (
+      <Segment id="map" >
+        {this.props.areas.map(area => {
+          const hosts = this.areaHosts(area)
+          return <Area key={area.id} area={area} hosts={hosts} />
+        })}
+      </Segment>
+    )
+  }
 }
 
 export default WestworldMap
