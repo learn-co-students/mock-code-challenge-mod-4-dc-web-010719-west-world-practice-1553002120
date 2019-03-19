@@ -5,19 +5,44 @@ import WestworldMap from './components/WestworldMap';
 import Headquarters from './components/Headquarters';
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      hosts: [],
+      areas: []
+    }
+  }
 
-  // As you go through the components given you'll see a lot of functional components.
-  // But feel free to change them to whatever you want.
-  // It's up to you whether they should be stateful or not.
+  componentDidMount() {
+    this.loadHosts()
+    this.loadAreas()
+  }
+
+  loadHosts() {
+    fetch(`${App.api}/hosts`)
+      .then(res => res.json())
+      .then(hosts => {
+        this.setState({hosts})
+      })
+  }
+
+  loadAreas() {
+    fetch(`${App.api}/areas`)
+      .then(res => res.json())
+      .then(areas => {
+        this.setState({areas})
+      })
+  }
 
   render(){
     return (
       <Segment id='app'>
-        <WestworldMap />
+        <WestworldMap areas={this.state.areas} />
         <Headquarters />
       </Segment>
     )
   }
 }
 
+App.api = "http://localhost:4000"
 export default App;
