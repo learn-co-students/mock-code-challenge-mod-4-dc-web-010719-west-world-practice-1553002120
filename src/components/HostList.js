@@ -1,13 +1,14 @@
 import React from 'react'
 import { Card } from 'semantic-ui-react'
+import Host from './Host'
 
-const HostList = () => {
-
-  return(
-    <Card.Group itemsPerRow={6}>
-      {/* What do you think, partner? */}
-    </Card.Group>
-  )
-}
+const HostList = (props) => (
+  <Card.Group itemsPerRow={6}>
+    {props.hosts.map(host => {
+      return <Host key={host.id} host={host} 
+        onSelectHost={props.onSelectHost} />
+    })}
+  </Card.Group>
+)
 
 export default HostList
