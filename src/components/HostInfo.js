@@ -33,7 +33,7 @@ class HostInfo extends Component {
               <Card.Meta>
                 <Radio
                   onChange={this.toggle}
-                  label={"Active" /* Sometimes the label should take "Decommissioned". How are we going to conditionally render that? */}
+                  label={active ? "Active" : "Decomissioned"}
                   checked={active}
                   slider
                 />

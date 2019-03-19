@@ -47,11 +47,11 @@ class App extends Component {
   }
 
   onToggleHost = (host) => {
+    host.active = !host.active
     const hosts = this.state.hosts.map(h => {
-      return h.id === host.id ? 
-      {...h, active: !h.active} : h
+      return h.id === host.id ? host : h
     })
-    this.setState({hosts})
+    this.setState({hosts, activeHost: host})
   }
 
   render(){
