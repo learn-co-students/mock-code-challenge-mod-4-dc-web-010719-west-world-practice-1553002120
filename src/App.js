@@ -35,11 +35,17 @@ class App extends Component {
       })
   }
 
+  inactiveHosts() {
+    return this.state.hosts.filter(host => {
+      return !host.active
+    })
+  }
+
   render(){
     return (
       <Segment id='app'>
         <WestworldMap areas={this.state.areas} hosts={this.state.hosts} />
-        <Headquarters />
+        <Headquarters hosts={this.inactiveHosts()} />
       </Segment>
     )
   }

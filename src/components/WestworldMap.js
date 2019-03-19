@@ -9,7 +9,7 @@ class WestworldMap extends React.Component {
 
   areaHosts(area) {
     return this.props.hosts.filter(host => {
-      return host.area === area.name
+      return host.active && host.area === area.name
     })
   }
 
