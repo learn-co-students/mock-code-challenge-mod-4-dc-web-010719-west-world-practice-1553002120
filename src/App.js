@@ -8,8 +8,9 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      areas: [],
       hosts: [],
-      areas: []
+      activeHost: {}
     }
   }
 
@@ -41,11 +42,15 @@ class App extends Component {
     })
   }
 
+  onSelectHost = (host) => {
+    this.setState({activeHost: host})
+  }
+
   render(){
     return (
       <Segment id='app'>
-        <WestworldMap areas={this.state.areas} hosts={this.state.hosts} />
-        <Headquarters hosts={this.inactiveHosts()} />
+        <WestworldMap areas={this.state.areas} hosts={this.state.hosts} onSelectHost={this.onSelectHost} />
+        <Headquarters hosts={this.inactiveHosts()} activeHost={this.state.activeHost} onSelectHost={this.onSelectHost} />
       </Segment>
     )
   }

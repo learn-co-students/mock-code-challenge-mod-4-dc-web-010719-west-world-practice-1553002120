@@ -8,7 +8,7 @@ const ColdStorage = (props) => (
       <h3 className="labels">ColdStorage</h3>
     </Segment>
     <Segment compact>
-      <HostList hosts={props.hosts} />
+      <HostList hosts={props.hosts} onSelectHost={props.onSelectHost} />
     </Segment>
   </Segment.Group>
 )

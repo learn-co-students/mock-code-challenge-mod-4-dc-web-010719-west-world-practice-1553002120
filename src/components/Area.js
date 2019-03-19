@@ -11,7 +11,7 @@ const Area = (props) => {
   return (
     <div className='area' id={key}>
       <h3 className='labels'>{name}</h3>
-      <HostList hosts={props.hosts} />
+      <HostList hosts={props.hosts} onSelectHost={props.onSelectHost} />
     </div>
   )
 }

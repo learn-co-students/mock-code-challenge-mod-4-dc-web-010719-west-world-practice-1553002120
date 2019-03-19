@@ -8,7 +8,7 @@ const Host = (props) => {
   return (
     <Card
       className="host"
-      onClick={ /* On Click what? */()=>{}}
+      onClick={() => props.onSelectHost(props.host)}
       image={imageUrl}
       raised
     />

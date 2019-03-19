@@ -10,11 +10,15 @@ class HostInfo extends Component {
   }
 
   render(){
+    const {id, firstName, lastName, active, imageUrl, gender, area} = this.props.host
+    // const fullName = `${firstName} ${lastName}`
+    const genderIcon = gender === 'Female' ? <Icon name='woman' /> : <Icon name='man' />
+
     return (
       <Grid>
         <Grid.Column width={6}>
           <Image
-            src={/* pass in the right image here */""}
+            src={imageUrl}
             floated='left'
             size='small'
             className="hostImg"
@@ -24,8 +28,7 @@ class HostInfo extends Component {
           <Card>
             <Card.Content>
               <Card.Header>
-                {"Bob"} | { true ? <Icon name='man' /> : <Icon name='woman' />}
-                { /* Think about how the above should work to conditionally render the right First Name and the right gender Icon */ }
+                {firstName} | {genderIcon}
               </Card.Header>
               <Card.Meta>
                 <Radio

@@ -3,9 +3,9 @@ import { Segment } from 'semantic-ui-react';
 import Area from './Area'
 
 class WestworldMap extends React.Component {
-  constructor(props) {
-    super(props)
-  }
+  // constructor(props) {
+  //   super(props)
+  // }
 
   areaHosts(area) {
     return this.props.hosts.filter(host => {
@@ -15,10 +15,10 @@ class WestworldMap extends React.Component {
 
   render() {
     return (
-      <Segment id="map" >
+      <Segment id="map">
         {this.props.areas.map(area => {
           const hosts = this.areaHosts(area)
-          return <Area key={area.id} area={area} hosts={hosts} />
+          return <Area key={area.id} area={area} hosts={hosts} onSelectHost={this.props.onSelectHost} />
         })}
       </Segment>
     )

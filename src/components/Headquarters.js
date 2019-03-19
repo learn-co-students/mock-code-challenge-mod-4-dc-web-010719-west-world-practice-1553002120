@@ -8,16 +8,19 @@ class Headquarters extends Component {
   // Remember, there's many ways to do this. This doesn't have to be a class component. It's up to you.
   constructor(props) {
     super(props)
+    // this.state = {
+    //   activeHost: {}
+    // }
   }
 
   render(){
     return(
       <Grid celled='internally'>
         <Grid.Column width={10}>
-          <ColdStorage hosts={this.props.hosts} />
+          <ColdStorage hosts={this.props.hosts} onSelectHost={this.props.onSelectHost} />
         </Grid.Column>
         <Grid.Column width={6}>
-          <Details />
+          <Details host={this.props.activeHost} />
         </Grid.Column>
       </Grid>
     )
